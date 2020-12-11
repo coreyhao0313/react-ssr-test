@@ -1,0 +1,36 @@
+{
+  "name": "ivy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config build/webpack.client.js",
+    "prod-node": "PORT=6000 node dist/bundle.js",
+    "prod-build": "NODE_ENV=production npm run build",
+    "dev-nodemon": "PORT=3000 NODE_ENV=development nodemon dist/bundle.js --watch",
+    "dev-build": "webpack --watch --config build/webpack.dev.js --config build/webpack.client.js",
+    "build": "webpack --config build/webpack.prod.js --config build/webpack.client.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@webpack-cli/init": "^1.0.3",
+    "nodemon": "^2.0.6",
+    "webpack-merge": "^5.4.1",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "express": "^4.17.1",
+    "html-webpack-plugin": "^4.5.0",
+    "path": "^0.12.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
+  }
+}
